@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador texto</title>
+    <link rel="icon" href="img/Logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+    
+</head>
+<body>
+    <!--Header-->
+    <header>
+        <!--Content logo-->
+        <div id="logo">
+            <img src="img/Logo.svg" alt="logo">
+        </div>
+        <!--Fin content logo-->
+    </header>
+    <!-- FIn Header-->
+
+    <!-- Cuerpo-->
+    <main>
+        <!--section principal-->
+        <section>
+            <!--Text area-->
+            <div id="content_text">
+                <textarea id="camp_text" placeholder="Escribe tú texto aquí..." rows="4" cols="60"></textarea>
+            </div>
+
+            <!--Mensaje alerta-->
+            <div id="warning-message">
+                <i class="fa-solid fa-circle-info"></i>
+                Solo letras minúsculas y sin acentos.
+            </div>
+            
+            <!--Botones-->
+            <div id="btns">
+                <input type="button" class="btn" id="btn-uno" value="Encriptar">
+                <input type="button" class="btn btn-dos" id="btn-dos" value="Desencriptar">
+            </div>
+        </section>        
+        <!--Fin section principal-->
+    </main>
+
+    <!--aside-->
+    <aside id="aside">
+        <!-- Text area o div para mostrar el texto encriptado/desencriptado -->
+        <div id="output_text">
+            <textarea id="outputSection" readonly></textarea>
+        </div>
+        <div id="image-aside" class="hidden">
+            <img src="img/Muñeco.svg" alt="Imagen muñeco">
+            <img src="img/Frame5.svg" alt="Imagen texto">
+        </div>
+        <input type="button"  class="btn btn-dos hidden" id="btn-tres" value="Copiar">
+    </aside>
+    <!--Fin aside-->
+
+    <!--Pie de página-->
+    <footer>
+        Hecho con <i class="fa-solid fa-heart" style="color: #f00808;"></i> por Harnel Peña, de Alura Latam&copy; para el <i class="fa-solid fa-earth-americas" style="color: #00467b;"></i> -
+            <a href="https://www.linkedin.com/in/harnel-peña" target="_blank" <i class="fa-brands fa-linkedin"></i> </a>
+            <a href="https://github.com/harnelp" target="_blank" <i class="fa-brands fa-github" style="color: #0e0f0e;"></i> </a>
+    </footer>
+    <!--Fin Pie de página-->
+
+    <!--JS archivos-->
+    <script src="js/main.js"></script>
+    <script src="https://kit.fontawesome.com/a8a9fabc7f.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+/*volviendo valores css por defecto*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #E5E5E5;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Estilos contenedor logo*/
+#logo{
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+/*contenedor de text-area*/
+#content_text{
+    margin-top: 50px;
+    margin-left: 200px;
+}
+/*Contenedor text-area*/
+#camp_text{
+    width: 60%;
+    height: 250px;
+    padding-left: 1px;
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2em;
+    font-weight: 400;
+    background-color: #E5E5E5;
+}
+/*Estilos text-area*/
+#camp_text::placeholder {
+    letter-spacing: 14.1px; /*damos espaciado a las letras del placeholder*/
+    color: #888; /* Cambia el color del texto del placeholder */
+    font-style: italic;
+}
+/*Estilos del focus por defecto en el text-area*/
+#camp_text:focus {
+    outline: 1px solid #888; /* contorno más sutil */
+}
+
+#warning-message{
+    position: absolute;
+    bottom: 180px;
+    left: 200px;
+    font-weight: 700;
+    color: #495057;
+}
+
+/*Estilos caja botones*/
+#btns{
+position: absolute;
+bottom: 72px;
+left: 200px;
+}
+/*Estilos y animaciones clase botones ambos*/
+.btn{
+    height: 80px;
+    width: 398px;
+    border-radius: 20px;
+    transition: background-color 0.3s, transform 0.1s; /* Suaviza el cambio de color y transformación */
+}
+.btn:hover {
+    background-color: #5385b8; /* Un tono más claro o más oscuro para el efecto hover */
+    cursor: pointer; /* Cambia el cursor a una mano para indicar que es un botón */
+}
+.btn:active {
+    background-color: #07437a; /* Un color más oscuro para simular que el botón está presionado */
+    transform: scale(0.98); /* Hace el botón un poco más pequeño, dando la sensación de que se está presionando */
+}
+.btn:focus {
+    outline: none; /* Elimina el contorno predeterminado */
+    box-shadow: 0 0 0 2px #1C4E80; /* Agrega un sombreado para indicar que el botón está enfocado */
+}
+
+/*boton uno estilos*/
+#btn-uno{
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: white;
+    border: 2px solid #0A3871;
+    background-color: #0A3871;
+}
+/*boton dos estilos*/
+.btn-dos{
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #0A3871;
+    border: 2px solid #0A3871;
+    background-color: #D8DFE8;
+}
+
+/*aside*/
+#aside{
+    position:absolute;
+    top: 40px;
+    width: 400px;
+    height: 600px;
+    right: 40px;
+    background-color: white;
+    box-shadow: 10px 15px 20px 5px rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+}
+#output_text textarea {
+    width: 93%; /* Ajusta al ancho del contenedor */
+    height: 570px; /* O la altura que prefieras */
+    margin: 17px 18px; /* Espacio arriba y abajo */
+    padding: 10px; /* Espacio interior */
+    box-sizing: border-box; /* Incluye padding y border en el ancho y alto */
+    border: none; /* Borde sutil, puedes personalizarlo */
+    resize: vertical; /* Permite al usuario cambiar el tamaño verticalmente */
+}
+#output_text textarea {
+    resize: none; /* Opcional, para no permitir al usuario cambiar el tamaño */
+    overflow-y: auto; /* Barras de desplazamiento vertical automáticas */
+    white-space: pre-wrap; /* Respeta saltos de línea y espacios */
+    word-wrap: break-word; /* Asegura que las palabras largas pasen a la siguiente línea */
+}
+#image-aside{
+    height: auto;
+    width: auto;
+    z-index: 1;
+}
+#btn-tres{
+    position: absolute;
+    bottom: 20px;
+    margin-left: 30px;
+    width: 340px;
+}
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    left: 200px;
+    right: 540px;
+    letter-spacing: 2px;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: 700;
+}
+
+/* Estilos generales de visibilidad */
+.hidden {
+    display: none;
+}
