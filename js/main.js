@@ -17,16 +17,15 @@ function decryptText(encryptedText) {
 
 // Esta función actualiza la UI según si hay texto para mostrar o no
 function updateUIAfterEncryption(encryptedText) {
-    const imageAside = document.getElementById('image-aside');
+    const imageAside = document.getElementById('aside_section');
     const copyButton = document.getElementById('btn-tres');
     const hasText = encryptedText.trim() !== ''; // Verifica si realmente hay texto
-
     if (hasText) {
         imageAside.classList.add('hidden');
         copyButton.classList.remove('hidden');
     } else {
-        copyButton.classList.remove('hidden');
-        imageAside.classList.add('hidden');
+        imageAside.classList.remove('hidden');
+        copyButton.classList.add('hidden');
     }
 }
 
@@ -48,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateUIAfterEncryption(encryptedText);
     });
 
-    // Event listener para el botón de desencriptar
     // Event listener para el botón de desencriptar
     decryptButton.addEventListener('click', function() {
     const encryptedText = outputSection.innerText; // O de inputText.value si quieres desencriptar lo que está en el textarea
