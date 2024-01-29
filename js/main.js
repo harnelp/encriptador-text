@@ -16,17 +16,20 @@ function decryptText(encryptedText) {
 }
 
 // Esta función actualiza la UI según si hay texto para mostrar o no
-function updateUIAfterEncryption(text) {
-    const images = document.querySelectorAll('#aside_section img');
+function updateUIAfterEncryption(encryptedText) {
+    const imageAside = document.getElementById('image-aside');
     const copyButton = document.getElementById('btn-tres');
-    if (text) {
-        images.forEach(img => img.classList.add('hidden'));
+    const hasText = encryptedText.trim() !== ''; // Verifica si realmente hay texto
+
+    if (hasText) {
+        imageAside.classList.add('hidden');
         copyButton.classList.remove('hidden');
     } else {
-        images.forEach(img => img.classList.remove('hidden'));
-        copyButton.classList.add('hidden');
+        copyButton.classList.remove('hidden');
+        imageAside.classList.add('hidden');
     }
 }
+
 
 // Espera a que el DOM esté completamente cargado antes de añadir event listeners
 document.addEventListener('DOMContentLoaded', () => {
