@@ -105,25 +105,14 @@ left: 200px;
     box-shadow: 10px 15px 20px 5px rgba(0, 0, 0, 0.6);
     border-radius: 15px;
 }
-#output_text textarea {
-    width: 93%; /* Ajusta al ancho del contenedor */
-    height: 570px; /* O la altura que prefieras */
-    margin: 17px 18px; /* Espacio arriba y abajo */
-    padding: 10px; /* Espacio interior */
-    box-sizing: border-box; /* Incluye padding y border en el ancho y alto */
-    border: none; /* Borde sutil, puedes personalizarlo */
-    resize: vertical; /* Permite al usuario cambiar el tamaño verticalmente */
+
+#aside_section{
+    display: block;
+    margin-top: 50px;
+    margin-left: 50px;
 }
-#output_text textarea {
-    resize: none; /* Opcional, para no permitir al usuario cambiar el tamaño */
-    overflow-y: auto; /* Barras de desplazamiento vertical automáticas */
-    white-space: pre-wrap; /* Respeta saltos de línea y espacios */
-    word-wrap: break-word; /* Asegura que las palabras largas pasen a la siguiente línea */
-}
-#image-aside{
-    height: auto;
-    width: auto;
-    z-index: 1;
+#aside_section, img{
+    width: 300px;
 }
 #btn-tres{
     position: absolute;
@@ -142,9 +131,4 @@ footer {
     display: flex;
     justify-content: space-evenly;
     font-weight: 700;
-}
-
-/* Estilos generales de visibilidad */
-.hidden {
-    display: none;
 }

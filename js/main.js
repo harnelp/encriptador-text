@@ -16,26 +16,14 @@ function decryptText(encryptedText) {
 }
 
 // Esta función actualiza la UI según si hay texto para mostrar o no
-function updateUIAfterEncryption(encryptedText) {
-    const imageAside = document.getElementById('image-aside');
+function updateUIAfterEncryption(text) {
+    const images = document.querySelectorAll('#aside_section img');
     const copyButton = document.getElementById('btn-tres');
-    if (encryptedText) {
-        imageAside.classList.add('hidden');
+    if (text) {
+        images.forEach(img => img.classList.add('hidden'));
         copyButton.classList.remove('hidden');
     } else {
-        imageAside.classList.remove('hidden');
-        copyButton.classList.add('hidden');
-    }
-}
-
-function updateUIAfterDecryption(decryptedText) {
-    const imageAside = document.getElementById('image-aside');
-    const copyButton = document.getElementById('btn-tres');
-    if (decryptedText) {
-        imageAside.classList.add('hidden');
-        copyButton.classList.remove('hidden');
-    } else {
-        imageAside.classList.remove('hidden');
+        images.forEach(img => img.classList.remove('hidden'));
         copyButton.classList.add('hidden');
     }
 }
@@ -56,19 +44,21 @@ document.addEventListener('DOMContentLoaded', () => {
         outputSection.innerText = encryptedText;
         updateUIAfterEncryption(encryptedText);
     });
-    
+
+    // Event listener para el botón de desencriptar
     // Event listener para el botón de desencriptar
     decryptButton.addEventListener('click', function() {
-        const encryptedText = outputSection.value; // Usa value para textarea
-        const decryptedText = decryptText(encryptedText);
-        outputSection.value = decryptedText; // Usa value para actualizar textarea
-        inputText.value = decryptedText; // Actualiza también el textarea de entrada si es necesario
-        updateUIAfterDecryption(decryptedText); // Cambio a la función correcta
-    });
+    const encryptedText = outputSection.innerText; // O de inputText.value si quieres desencriptar lo que está en el textarea
+    const decryptedText = decryptText(encryptedText);
+    outputSection.innerText = decryptedText; // Actualiza el texto en el 'aside' con el texto desencriptado
+    inputText.value = decryptedText; // Opcional, si también quieres mostrar el texto desencriptado en el textarea
+    updateUIAfterEncryption(decryptedText); // Ahora pasamos el texto desencriptado para mantener el botón de copiar visible
+});
 
 
     // Event listener para el botón de copiar
     copyButton.addEventListener('click', function() {
+        // Crea un elemento de texto temporal
         const textArea = document.createElement('textarea');
         textArea.style.position = 'fixed';
         textArea.style.opacity = '0';
@@ -79,16 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const successful = document.execCommand('copy');
             const msg = successful ? 'Copiar texto fue exitoso' : 'Copiar texto no fue exitoso';
             console.log(msg);
-            if (successful) {
-                // Limpia el textarea después de copiar
-                inputText.value = '';
-                // Actualiza la UI para reflejar que no hay texto pendiente de acciones
-                updateUIAfterEncryption('');
-            }
         } catch (err) {
             console.error('Falló la copia', err);
         }
         document.body.removeChild(textArea);
     });
-
 });
